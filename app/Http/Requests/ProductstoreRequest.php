@@ -24,7 +24,11 @@ class ProductstoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
+            'price'=>'required',
+            'detail'=>'required'
         ];
     }
+
+    
 }
