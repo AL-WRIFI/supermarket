@@ -66,14 +66,9 @@ class ProductController extends Controller
         return view('product.edit', compact('product'))  ;
     }
 
-    public function update(Request $request, Product $product)
+    public function update(ProductupdateRequest $request, Product $product)
     {
-        $request->validate([
-            'name'=>'required',
-            'price'=>'required',
-            'detail'=>'required'
-        ]);
-
+       
         $product->update($request->all());
          return redirect()->route('products.index')
          ->with('success','product updated successflly') ;
